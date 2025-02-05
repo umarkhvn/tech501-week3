@@ -1,0 +1,8 @@
+# Jenkins Lab
+
+* Log into Jenkins using your credentials
+* New Item
+* Enter item name:
+    * umar-first-project
+    * Freestyle project
+    * 
