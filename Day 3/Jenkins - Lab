@@ -155,11 +155,14 @@ In build environment:
 - Enable SSH agent and specify credentials.
 
 Add a build step - execute shell script:
-```bash
-git checkout main
-git pull origin main
-git merge --ff-only origin/dev
-git push origin main
-```
+
+`git checkout main`
+
+`git pull origin main`
+
+`git merge --ff-only origin/dev`
+
+`git push origin main`
+
 
 Save and Build Now
