@@ -1,3 +1,27 @@
+- [AWS 2-Tier Architecture Deployment Guide](#aws-2-tier-architecture-deployment-guide)
+  - [Key Pair Setup](#key-pair-setup)
+  - [EC2 Instance Creation](#ec2-instance-creation)
+    - [Step 1: Open the EC2 Dashboard](#step-1-open-the-ec2-dashboard)
+    - [Step 2: Configure the Instances](#step-2-configure-the-instances)
+    - [Step 3: Launch the Instances](#step-3-launch-the-instances)
+  - [Application Setup](#application-setup)
+    - [SSH into the App VM](#ssh-into-the-app-vm)
+    - [Install Node.js and npm](#install-nodejs-and-npm)
+    - [Clone the Repository](#clone-the-repository)
+    - [Start the Application](#start-the-application)
+  - [Database Setup](#database-setup)
+    - [Install MongoDB](#install-mongodb)
+    - [Start the MongoDB Service](#start-the-mongodb-service)
+    - [Stop MongoDB (if needed)](#stop-mongodb-if-needed)
+  - [Reverse Proxy Setup (NGINX)](#reverse-proxy-setup-nginx)
+    - [Install NGINX](#install-nginx)
+    - [Check NGINX Status](#check-nginx-status)
+    - [Configure NGINX for Reverse Proxy](#configure-nginx-for-reverse-proxy)
+      - [Add the following configuration:](#add-the-following-configuration)
+    - [Enable the Configuration](#enable-the-configuration)
+    - [Update AWS Security Group](#update-aws-security-group)
+
+
 # AWS 2-Tier Architecture Deployment Guide
 
 ## Key Pair Setup

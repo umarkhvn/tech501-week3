@@ -1,3 +1,12 @@
+- [How to Integrate Jenkins into GitHub](#how-to-integrate-jenkins-into-github)
+    - [Continuous Integration (CI)](#continuous-integration-ci)
+    - [Continuous Deployment (CD)](#continuous-deployment-cd)
+    - [Differences](#differences)
+      - [Pros:](#pros)
+      - [Cons:](#cons)
+    - [CI/CD Benefits](#cicd-benefits)
+
+
 # How to Integrate Jenkins into GitHub
 
 ### Continuous Integration (CI)

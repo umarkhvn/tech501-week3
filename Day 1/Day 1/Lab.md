@@ -1,3 +1,16 @@
+- [Using SSH Instead of HTTP for GitHub](#using-ssh-instead-of-http-for-github)
+  - [Overview](#overview)
+- [Steps to Use SSH for GitHub Authentication](#steps-to-use-ssh-for-github-authentication)
+  - [1. Generate SSH Key Pair](#1-generate-ssh-key-pair)
+  - [2. Register Public Key on GitHub](#2-register-public-key-on-github)
+    - [**On GitHub:**](#on-github)
+    - [**In the Local Terminal:**](#in-the-local-terminal)
+  - [3. Register Private Key with SSH Agent](#3-register-private-key-with-ssh-agent)
+- [Creating a Test Repository (on GitHub and Locally)](#creating-a-test-repository-on-github-and-locally)
+  - [**On GitHub:**](#on-github-1)
+  - [**In the Local Terminal:**](#in-the-local-terminal-1)
+
+
 # Using SSH Instead of HTTP for GitHub
 
 ## Overview

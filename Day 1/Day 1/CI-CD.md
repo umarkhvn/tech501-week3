@@ -1,4 +1,16 @@
+- [CI/CD Pipelines](#cicd-pipelines)
+  - [Continuous Integration (CI)](#continuous-integration-ci)
+  - [Continuous Deployment/Delivery (CD)](#continuous-deploymentdelivery-cd)
+    - [Benefits of CI/CD](#benefits-of-cicd)
+- [What is Jenkins?](#what-is-jenkins)
+    - [Benefits of Jenkins](#benefits-of-jenkins)
+    - [How Jenkins Works](#how-jenkins-works)
+- [Alternatives to Jenkins](#alternatives-to-jenkins)
+- [Business Value of CI/CD](#business-value-of-cicd)
+
+
 # CI/CD Pipelines
+
 
 ## Continuous Integration (CI)
 - Developers frequently merge code changes into a shared repository.

@@ -1,3 +1,20 @@
+- [Jenkins Labs](#jenkins-labs)
+  - [Creating a Project (Pipeline)](#creating-a-project-pipeline)
+    - [Steps:](#steps)
+  - [Creating a Multi-Stage Pipeline](#creating-a-multi-stage-pipeline)
+    - [Steps:](#steps-1)
+- [Jenkins - CI/CD Pipeline for Sparta Test App](#jenkins---cicd-pipeline-for-sparta-test-app)
+    - [Setting Up a New Repo with App Code](#setting-up-a-new-repo-with-app-code)
+- [Creating Jenkins Credentials for GitHub Access](#creating-jenkins-credentials-for-github-access)
+    - [Steps:](#steps-2)
+    - [Adding Public Key to GitHub](#adding-public-key-to-github)
+- [Setting Up Job 1](#setting-up-job-1)
+    - [Steps:](#steps-3)
+  - [Setting Up Job 2](#setting-up-job-2)
+    - [Create Dev Branch](#create-dev-branch)
+    - [Create a new item:](#create-a-new-item)
+
+
 # Jenkins Labs
 
 ## Creating a Project (Pipeline)
