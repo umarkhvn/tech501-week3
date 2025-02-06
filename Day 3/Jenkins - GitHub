@@ -29,3 +29,8 @@ The key differences between CI & CD are that CI primarily involves integrating a
 ![Jenkins CI/CD Pipeline for Sparta Test App](jenkins33.png)
 
 For this pipeline, we will be using CD.
+
+Keygen naming convention:
+
+*  ssh-keygen -t rsa -b 4096 -C "ukhan3211@gmail.com"
+
