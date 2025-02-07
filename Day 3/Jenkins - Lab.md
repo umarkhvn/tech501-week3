@@ -13,6 +13,9 @@
   - [Setting Up Job 2](#setting-up-job-2)
     - [Create Dev Branch](#create-dev-branch)
     - [Create a new item:](#create-a-new-item)
+  - [Setting Up Job 3: EC2 CD Deployment](#setting-up-job-3-ec2-cd-deployment)
+    - [Blockers](#blockers)
+  - [Next Steps](#next-steps)
 
 
 # Jenkins Labs
@@ -144,7 +147,8 @@ Change the Main branch to Dev in Git Bash (local):
 * Navigate to repo:
   * `cd OneDrive/SpartaGlobal/Documents/github/tech501-sparta-app-cicd`
 * Change branch:
-  * `git branch -M dev`
+  * `git checkout -b dev`
+  * OR `git branch -M dev`
 * In git bash:
     * `nano README.md`
 * Make a change to it and save so we can test the dev branch. This must be done otherwise the changes won't be updated 
@@ -183,3 +187,16 @@ Add a build step - execute shell script:
 
 
 Save and Build Now
+
+## Setting Up Job 3: EC2 CD Deployment 
+
+### Blockers
+* Need to ensure proper SSH key and EC2 instance connectivity.
+* I was not able to create a pipeline to automate EC2 deployment. I was met with the following error:
+
+![](image.png)
+
+## Next Steps
+* Troubleshoot Job 3 deployment issues
+* Ask peers for assistance
+* External research
