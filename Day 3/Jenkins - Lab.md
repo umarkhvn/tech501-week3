@@ -14,7 +14,9 @@
     - [Create Dev Branch](#create-dev-branch)
     - [Create a new item:](#create-a-new-item)
   - [Setting Up Job 3: EC2 CD Deployment](#setting-up-job-3-ec2-cd-deployment)
-    - [Blockers](#blockers)
+    - [Create a new item:](#create-a-new-item-1)
+    - [Trigger Change](#trigger-change)
+    - [Blockers (NOW RESOLVED)](#blockers-now-resolved)
   - [Next Steps](#next-steps)
 
 
@@ -146,9 +148,8 @@ Change the Main branch to Dev in Git Bash (local):
 
 * Navigate to repo:
   * `cd OneDrive/SpartaGlobal/Documents/github/tech501-sparta-app-cicd`
-* Change branch:
+* Create and change branch:
   * `git checkout -b dev`
-  * OR `git branch -M dev`
 * In git bash:
     * `nano README.md`
 * Make a change to it and save so we can test the dev branch. This must be done otherwise the changes won't be updated 
@@ -161,7 +162,7 @@ Change the Main branch to Dev in Git Bash (local):
   * tech501-umar-job2-ci-merge
 
 * In Job Config: 
-  * change branch specifier to */dev from */main.
+  * change branch specifier to */main from */dev.
 
 * Build triggers:
   - Build after other projects are built
@@ -190,7 +191,64 @@ Save and Build Now
 
 ## Setting Up Job 3: EC2 CD Deployment 
 
-### Blockers
+* Before creating EC2:
+  * Ensure NSG rules on EC2 App allow Jenkins IP to SSH
+  * Previously had EC2 IP Address which caused connectivity issues
+  * Make SSH source any (0.0.0.0/32)
+
+### Create a new item:
+* Name:
+  * tech501-umar-job3-cd-deploy
+* Configure Git Repo links (as above with previous jobs)
+* Specify */dev branch
+* Build after other projects:
+  * tech501-umar-job2-ci-merge
+  * Trigger only if build is stable
+* Build Environments:
+  * Provide NodeJS: V20
+  * Add SSH Agent for both Jenkins 2 Github and for EC2 access:
+    * `umar-jenkins-2-github`
+    * `tech501-umar-ec2-pem-file`
+* Execute shell:
+  * `scp -o StrictHostKeyChecking=no -r /var/jenkins/workspace/tech501-umar-job3-cd-deploy/ ec2-user@34.244.22.211:~
+ssh ec2-user@34.244.22.211 << 'EOF'
+  cd ~/tech501-week2/nodejs20-sparta-test-app/app
+  npm install
+  pm2 restart app || pm2 start app.js --name "app"
+EOF`
+
+### Trigger Change
+
+* SSH into App EC2
+* Switch into `dev` branch on local git repo
+* cd into 'views' folder:
+  * `cd tech501-week2/nodejs20-sparta-test-app/app/views`
+* nano into index file:
+  * `nano index.ejs`
+  * Add any text after `<h2>The app is running correctly</h2>`
+    * E.g: `<h2>Test changes</h2>`
+
+![](image-1.png)
+
+<br>
+
+`git add .` 
+
+`git commit -m "test changes"`
+
+`git push origin dev`
+
+* Push will trigger job 1 to run corresponding jobs and display on App URL (Public IP used for EC2)
+
+Console Output:
+
+![Console Output](image-3.png)
+
+Test Page:
+
+![](image-2.png)
+
+### Blockers (NOW RESOLVED)
 * Need to ensure proper SSH key and EC2 instance connectivity.
 * I was not able to create a pipeline to automate EC2 deployment. I was met with the following error:
 
